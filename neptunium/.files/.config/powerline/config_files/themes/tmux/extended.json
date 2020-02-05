@@ -1,0 +1,54 @@
+{
+	"segments": {
+		"left": [
+				
+		],
+		"right": [
+			{ 
+   				"function": "powerline.segments.common.bat.battery",
+				"args": {
+					"gamify": false,
+					"online": "  ",
+					"offline": " "
+				}
+			},			
+			{
+            	"function" : "powerline.segments.common.vcs.branch"
+            },
+
+			{
+				"function": "powerline.segments.common.sys.uptime",
+				"priority": 50
+			},
+	
+			{
+				"function": "powerline.segments.common.wthr.weather",
+				"priority": 50,
+    			"args": {
+        			"unit": "C",
+					"location_query": "glasgow, scotland"    			
+				}	
+			},
+			
+			
+			{
+				"function": "powerline.segments.common.time.date"
+			},
+	
+			{
+				"function": "powerline.segments.common.time.date",
+				"name": "time",
+				"args": {
+					"format": "%H:%M",
+					"istime": true
+				}
+			},
+
+				
+
+			{
+				"function": "powerline.segments.common.net.hostname"
+			}
+		]
+	}
+}

@@ -11,3 +11,9 @@ For example:
 `/bin/bash ~/.config/crc.files/neptunium/setup.sh`
 
 This script will run and setup any symbolic links to the dot files.
+
+## Systems
+
+| System Name | Description |
+| ----------- | ----------- | 
+| Neptunium | Personal Laptop |
