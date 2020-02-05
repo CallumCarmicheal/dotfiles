@@ -12,6 +12,11 @@ For example:
 
 This script will run and setup any symbolic links to the dot files.
 
+This setup script is still yet to be written, in most cases it might become an interactive C++ project or maybe
+a simple PHP script. The type of script is yet to be decided. This line will be updated with docs for the script
+when ever it is created.
+
+
 ## Systems
 
 | System Name | Description |
