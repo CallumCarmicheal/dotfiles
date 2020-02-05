@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#
+# This is a rc file that is shared between BASH and FISH 
+# to allow any custom functions to work on either.
+#
+
 # Get local weather and present it nicely
 weather() {
   	# We require 'curl' so check for it
