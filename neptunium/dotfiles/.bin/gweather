@@ -11,6 +11,9 @@
 #
 #
 
+# This specifies the default language type.
+DEFAULT_LANG_TYPE=ja
+
 # We require 'curl' so check for it
 if ! command -v curl &>/dev/null; then
 	printf "%s\n" "[ERROR] weather: This command requires 'curl', please install it."
@@ -18,4 +21,4 @@ if ! command -v curl &>/dev/null; then
 fi
 
 # If no arg is given, default to ip location
-curl -H "Accept-Language: ${2:-en}" -m 10 "http://wttr.in/${1:-}" 2>/dev/null || printf "%s\n" "[ERROR] weather: Could not connect to weather service."
+curl -H "Accept-Language: ${2:-$DEFAULT_LANG_TYPE}" -m 10 "http://wttr.in/${1:-}" 2>/dev/null || printf "%s\n" "[ERROR] weather: Could not connect to weather service."
