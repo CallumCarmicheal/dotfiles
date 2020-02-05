@@ -107,6 +107,7 @@ set laststatus=2
 let g:weather#area='glasgow,uk'
 let g:airline_powerline_fonts = 1
 let g:airline_theme='wombat'
+let g:airline#extensions#tabline#enabled = 1
 
 "" NERDTree settings
 let NERDTreeMinimalUI = 0
