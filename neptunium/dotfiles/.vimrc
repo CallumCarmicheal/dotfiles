@@ -108,6 +108,7 @@ let g:weather#area='glasgow,uk'
 let g:airline_powerline_fonts = 1
 let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 "" NERDTree settings
 let NERDTreeMinimalUI = 0
@@ -130,14 +131,14 @@ let g:deoplete#enable_at_startup = 1
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
 \ 'c': [
-\    '/home/callum/bin/cquery/bin/cquery',
-\    '--log-file=/home/callum/.tmp/cq.c.log',
-\    '--init={"cacheDirectory":"/home/callum/.tmp/cquery"}'
+\    '~/.bin/cquery/build/cquery',
+\    '--log-file=~/.tmp/cq.c.log',
+\    '--init={"cacheDirectory":"~/.tmp/cquery"}'
 \  ],
 \ 'cpp': [
-\    '/home/callum/bin/cquery/bin/cquery',
-\    '--log-file=/home/callum/.tmp/cq.cpp.log',
-\    '--init={"cacheDirectory":"/home/callum/.tmp/cquery"}' 
+\    '~/.bin/cquery/build/cquery',
+\    '--log-file=~/.tmp/cq.cpp.log',
+\    '--init={"cacheDirectory":"~/.tmp/cquery"}' 
 \  ] 
 \ }
 
@@ -169,7 +170,7 @@ let g:LanguageClient_diagnosticsDisplay = {
     \ }
 
 let g:LanguageClient_loadSettings = 1 
-let g:LanguageClient_settingsPath = '/home/callum/.config/vim/languageclient.json'
+let g:LanguageClient_settingsPath = '~/.config/vim/languageclient.json'
 set completefunc=LanguageClient#complete
 set formatexpr=LanguageClient_textDocument_rangeFormatting()
 
@@ -200,6 +201,28 @@ nmap <silent> <A-Right> :wincmd l<CR>
 ""		actions.
 nmap <silent> <C-Up> :tabnext<CR>
 nmap <silent> <C-Down> :tabprevious<CR>
+
+"" Buffer switching
+" Mappings to access buffers (don't use "\p" because a
+" delay before pressing "p" would accidentally paste).
+" \l       : list buffers
+" \b \f \g : go back/forward/last-used
+" \1 \2 \3 : go to buffer 1/2/3 etc
+nnoremap <Leader>L :buffers<CR>:buffer<Space>
+nnoremap <Leader>l :ls<CR>
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
+nnoremap <Leader>g :e#<CR>
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
+nnoremap <Leader>0 :10b<CR>
 
 "" Ctrl+K Snippit suggestions
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -267,4 +290,3 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-
